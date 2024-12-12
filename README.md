@@ -1,45 +1,51 @@
-# Getting Started
+# API Docs
 
-### Reference Documentation
+-----
 
-For further reference, please consider the following sections:
+This is RESTful API application for aggregating users from all configured databases in data-sources.yaml.
 
-* [Official Apache Maven documentation](https://maven.apache.org/guides/index.html)
-* [Spring Boot Maven Plugin Reference Guide](https://docs.spring.io/spring-boot/3.4.0/maven-plugin)
-* [Create an OCI image](https://docs.spring.io/spring-boot/3.4.0/maven-plugin/build-image.html)
-* [Spring Boot Testcontainers support](https://docs.spring.io/spring-boot/3.4.0/reference/testing/testcontainers.html#testing.testcontainers)
-* [Testcontainers Oracle-Free Module Reference Guide](https://java.testcontainers.org/modules/databases/oraclefree/)
-* [Testcontainers Postgres Module Reference Guide](https://java.testcontainers.org/modules/databases/postgres/)
-* [Spring Data JPA](https://docs.spring.io/spring-boot/3.4.0/reference/data/sql.html#data.sql.jpa-and-spring-data)
-* [Testcontainers](https://java.testcontainers.org/)
-* [Spring Web](https://docs.spring.io/spring-boot/3.4.0/reference/web/servlet.html)
+-----
 
-### Guides
+## Run the app
 
-The following guides illustrate how to use some features concretely:
+### Prerequisite
 
-* [Accessing Data with JPA](https://spring.io/guides/gs/accessing-data-jpa/)
-* [Building a RESTful Web Service](https://spring.io/guides/gs/rest-service/)
-* [Serving Web Content with Spring MVC](https://spring.io/guides/gs/serving-web-content/)
-* [Building REST services with Spring](https://spring.io/guides/tutorials/rest/)
+1. Install **3.x**, **Java 17**, **docker** and **docker compose**.
+2. Replace all `FULL_PATH_TO_THE_PROJECT` in `docker-compose-test.yml` and `docker-compose.yml` with full path to you
+   project.
+   Example `/home/my-user/IdeaProjects/users-service-v1`.
 
-### Testcontainers support
+### Start the app using terminal
 
-This project
-uses [Testcontainers at development time](https://docs.spring.io/spring-boot/3.4.0/reference/features/dev-services.html#features.dev-services.testcontainers).
+To start the app execute:
 
-Testcontainers has been configured to use the following Docker images:
+    mvn clean install && docker build -t users-service-v1:latest .
+    docker compose up -d
 
-* [`gvenzl/oracle-free:latest`](https://hub.docker.com/r/gvenzl/oracle-free)
-* [`postgres:latest`](https://hub.docker.com/_/postgres)
+After start up the application is available under:
 
-Please review the tags of the used images and set them to the same as you're running in production.
+`http://localhost:8080/geometric-shapes-service-v1/api/v1`
 
-### Maven Parent overrides
+To stop and clean up the app execute:
 
-Due to Maven's design, elements are inherited from the parent POM to the project POM.
-While most of the inheritance is fine, it also inherits unwanted elements like `<license>` and `<developers>` from the
-parent.
-To prevent this, the project POM contains empty overrides for these elements.
-If you manually switch to a different parent and actually want the inheritance, you need to remove those overrides.
+    docker compose down
 
+### Start the app using Intellij Idea
+
+To start dbs execute:
+
+    docker compose up --scale users-service-v1=0 -d
+
+To start the app you can use UsersServiceV1Application.java as entrypoint.
+Configure the following ENV variables in your Run/Debug Configurations:
+
+    MYSQL_DB_URL=jdbc:mysql://localhost:3306/users-database;
+    POSTGRES_DB_URL=jdbc:postgresql://localhost:5432/users-db
+
+-----
+
+# REST API
+
+OpenApi Docs are available under the following url after application start up:
+
+`http://localhost:8080/users-service-v1/api/v1/swagger-ui/index.html`

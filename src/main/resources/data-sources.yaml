@@ -1,0 +1,26 @@
+db-config:
+  data-source-properties:
+    - name: postgres-db
+      strategy: postgres
+      driverClassName: org.postgresql.Driver
+      url: ${POSTGRES_DB_URL}
+      user: admin
+      password: admin
+      table: users
+      mapping:
+        id: user_id
+        username: login
+        name: first_name
+        surname: last_name
+    - name: mysql-db
+      strategy: mysql
+      driverClassName: com.mysql.cj.jdbc.Driver
+      url: ${MYSQL_DB_URL}
+      user: mysql
+      password: mysql
+      table: user_table
+      mapping:
+        id: ldap_login
+        username: ldap_login
+        name: name
+        surname: surname
