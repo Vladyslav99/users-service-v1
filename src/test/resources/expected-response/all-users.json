@@ -1,0 +1,80 @@
+[
+  {
+    "id": "1",
+    "username": "jdoe-postgres",
+    "name": "John",
+    "surname": "Doe"
+  },
+  {
+    "id": "2",
+    "username": "andre-postgres",
+    "name": "John",
+    "surname": "Doe"
+  },
+  {
+    "id": "3",
+    "username": "asmith-postgres",
+    "name": "Alice",
+    "surname": "Smith"
+  },
+  {
+    "id": "4",
+    "username": "bwayne-postgres",
+    "name": "Bruce",
+    "surname": "Wayne"
+  },
+  {
+    "id": "5",
+    "username": "ckent-postgres",
+    "name": "Clark",
+    "surname": "Kent"
+  },
+  {
+    "id": "6",
+    "username": "dprince-postgres",
+    "name": "Diana",
+    "surname": "Prince"
+  },
+  {
+    "id": "asmith-mysql",
+    "username": "asmith-mysql",
+    "name": "Alice",
+    "surname": "Smith"
+  },
+  {
+    "id": "bwayne-mysql",
+    "username": "bwayne-mysql",
+    "name": "Bruce",
+    "surname": "Wayne"
+  },
+  {
+    "id": "ckent-mysql",
+    "username": "ckent-mysql",
+    "name": "Clark",
+    "surname": "Kent"
+  },
+  {
+    "id": "dark-mysql",
+    "username": "dark-mysql",
+    "name": "Diana",
+    "surname": "Dark"
+  },
+  {
+    "id": "dprince-mysql",
+    "username": "dprince-mysql",
+    "name": "Diana",
+    "surname": "Prince"
+  },
+  {
+    "id": "hebert-mysql",
+    "username": "hebert-mysql",
+    "name": "Diana",
+    "surname": "Hebert"
+  },
+  {
+    "id": "jdoe-mysql",
+    "username": "jdoe-mysql",
+    "name": "John",
+    "surname": "Doe"
+  }
+]

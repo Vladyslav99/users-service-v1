@@ -1,6 +1,11 @@
 spring:
   application:
     name: users-service-v1
+  config:
+    import: classpath:data-sources.yaml
+  autoconfigure:
+    exclude:
+      - org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
 server:
   servlet:
     context-path: /users-service-v1/api/v1
